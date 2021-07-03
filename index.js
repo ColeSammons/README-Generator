@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
+const fs = require("fs");
 const inquirer = require('inquirer');
-const markdown = require("./utils/generateMarkdown");
+const generateMarkdown = require("./utils/generateMarkdown");
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -12,6 +13,19 @@ const questions = [
                 return true;
             } else {
                 console.log('Enter your Github name please!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        message: "What is your email address?",
+        name: 'email',
+        validate: emailInput => {
+            if (emailInput) {
+                return true;
+            } else {
+                console.log('Enter your email please!');
                 return false;
             }
         }
@@ -66,19 +80,6 @@ const questions = [
         name: 'deployLink',
         message: 'Enter the full link to your deployed project.',
         when: ({ confirmDeploy }) => confirmDeploy
-    }
-    {
-        type: 'confirm',
-        name: 'confirmTable',
-        message: 'Would you like to have a table of contents?',
-        default: true
-    },
-    {
-        type: 'checkbox',
-        name: 'tableContent',
-        message: 'Choose which categories you would like to display in the table of contents.',
-        choices: ['Installation', 'Usage', 'Credits', 'License', 'Badges', 'Features', 'Tests'],
-        when: ({ confirmTable }) => confirmTable
     },
     {
         type: 'input',
@@ -113,9 +114,9 @@ const questions = [
         default: false
     },
     {
-        type: 'checkbox',
-        name: 'tableContent',
-        message: 'First, place the screenshot into assets/images.Now enter the full file name.',
+        type: 'input',
+        name: 'screenshot',
+        message: 'First, place the screenshot into assets/images. Now enter the full file name.',
         when: ({ confirmScreen }) => confirmScreen
     },
     {
@@ -125,14 +126,67 @@ const questions = [
     },
     {
         type: 'list',
-        name: 'tableContent',
+        name: 'license',
         message: 'Choose which license you would like to use.',
         choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense']
+    },
+    {
+        type: 'input',
+        message: "Enter how you would like people to contribute, if at all.",
+        name: 'contributer',
+        validate: contInput => {
+            if (contInput) {
+                return true;
+            } else {
+                console.log('Enter at least one contributer.');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        message: "Provide a test or example how to run the program.",
+        name: 'test',
+        validate: testInput => {
+            if (testInput) {
+                return true;
+            } else {
+                console.log('If there are no tests simply state there are none.');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'input',
+        message: "Finally, how would you like people to contact you?",
+        name: 'contact',
+        validate: contactInput => {
+            if (contactInput) {
+                return true;
+            } else {
+                console.log('If contact is not wanted please say so.');
+                return false;
+            }
+        }
     },
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
+function writeToFile(fileName, data) { 
+    return new Promise((resolve, reject) => {
+        fs.writeFile(`./dist/${fileName}`, data, err => {
+          if (err) {
+            reject(err);
+            return;
+          }
+    
+          resolve({
+            ok: true,
+            message: 'File created!'
+          });
+        });
+      });
+}
 
 // TODO: Create a function to initialize app
 function init() {
@@ -145,3 +199,6 @@ function init() {
 
 // Function call to initialize app
 init();
+
+
+// writeToFile('readme.md', data);
