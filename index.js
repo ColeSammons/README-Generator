@@ -116,7 +116,7 @@ const questions = [
     {
         type: 'input',
         name: 'screenshot',
-        message: 'First, place the screenshot into assets/images. Now enter the full file name.',
+        message: 'First, place the screenshot into dist/images. Now enter the full file name.',
         when: ({ confirmScreen }) => confirmScreen
     },
     {
@@ -172,20 +172,20 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) { 
+function writeToFile(fileName, data) {
     return new Promise((resolve, reject) => {
         fs.writeFile(`./dist/${fileName}`, data, err => {
-          if (err) {
-            reject(err);
-            return;
-          }
-    
-          resolve({
-            ok: true,
-            message: 'File created!'
-          });
+            if (err) {
+                reject(err);
+                return;
+            }
+
+            resolve({
+                ok: true,
+                message: 'File created!'
+            });
         });
-      });
+    });
 }
 
 // TODO: Create a function to initialize app
@@ -193,12 +193,33 @@ function init() {
     inquirer.prompt(questions)
         .then(data => {
             console.log(data);
+            return generateMarkdown(data);
         })
+        .then(readme => writeToFile('readme.md', readme))
+        .catch(err => {
+            console.log(err);
+          });
 }
 
 
 // Function call to initialize app
 init();
 
-
-// writeToFile('readme.md', data);
+// const mock = {
+//     username: 'ColeSammons',
+//     email: 'colemsammons@gmail.com',
+//     reponame: 'README-generator',
+//     titlename: 'README-generator',
+//     projectDesc: 'Creates a detailed readme for projects.',
+//     confirmDeploy: true,
+//     deployLink: 'google.com',
+//     installSteps: 'npm install inquirer',
+//     usage: 'Answer a series of questions and a readme will be populated from the results',
+//     confirmScreen: true,
+//     screenshot: 'screenshot.png',
+//     credits: 'me',
+//     license: 'MIT License',
+//     contributer: 'n/a',
+//     test: 'no current tests',
+//     contact: 'no contact'
+// }

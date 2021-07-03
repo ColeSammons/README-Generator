@@ -80,13 +80,86 @@ function renderLicenseLink(license) {
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) { }
+function renderLicenseSection(license) {
+  const year = new Date();
+  return `
+  ##License
+  ${renderLicenseLink(license)}
+
+  Copyright &copy; ${year.getFullYear()}
+  `;
+}
+
+function confirmScreenshot(data) {
+  if (data.confirmScreen === false) {
+    return '';
+  }
+  return `
+  ![Screenshot](dist/images/${data.screenshot})
+  `;
+}
+
+function confirmDeploy(data) {
+  if (data.confirmDeploy === false) {
+    return '';
+  }
+  return `
+  [${data.deployLink}](${data.deployLink})
+  `;
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `# ${data.titlename}
 
+  ${renderLicenseBadge(data.license)}
 
+  ## Description 
+
+  ${data.projectDesc}
+
+  ${confirmDeploy(data)}
+
+  ## Table of Contents
+
+  * [Installation](#Installation)
+  * [Usage](#Usage)
+  * [Credits](#Credits)
+  * [License](#License)
+  * [Contributing](#Contributing)
+  * [Tests](#Tests)
+  * [Questions](#Questions)
+   
+  ## Installation
+  
+  ${data.installSteps}
+  
+  ## Usage
+
+  ${data.usage}
+  ${confirmScreenshot(data)}
+
+  ## Credits
+
+  ${data.credits}
+
+  ${renderLicenseSection(data.license)}
+
+  ## Contributing
+
+  ${data.contributer}
+
+  ## Tests
+
+  ${data.test}
+
+  ## Questions
+
+  ${data.contact}
+
+  ${data.email}
+
+  [https://github.com/${data.username}/${data.reponame}](https://github.com/${data.username}/${data.reponame})
 `;
 }
 
