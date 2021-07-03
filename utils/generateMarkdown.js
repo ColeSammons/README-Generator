@@ -4,35 +4,35 @@ function renderLicenseBadge(license) {
   let badge = '';
   switch (license) {
     case 'GNU AGPLv3':
-      badge = "[![License: GNU AGPLv3](https://img.shields.io/badge/license-GNU%20AGPLv3-green)](https://www.gnu.org/licenses/agpl-3.0.en.html)"
+      badge = "[![License: GNU AGPLv3](https://img.shields.io/badge/license-GNU%20AGPLv3-green)](https://www.gnu.org/licenses/agpl-3.0.en.html)";
       break;
 
     case 'GNU GPLv3':
-      badge = "[![License: GNU GPLv3](https://img.shields.io/badge/license-GNU%20GPLv3-green)](https://www.gnu.org/licenses/gpl-3.0.en.html)"
+      badge = "[![License: GNU GPLv3](https://img.shields.io/badge/license-GNU%20GPLv3-green)](https://www.gnu.org/licenses/gpl-3.0.en.html)";
       break;
 
     case 'GNU LGPLv3':
-      badge = "[![License: GNU LGPLv3](https://img.shields.io/badge/license-GNU%20LGPLv3-green)](https://www.gnu.org/licenses/lgpl-3.0.en.html)"
+      badge = "[![License: GNU LGPLv3](https://img.shields.io/badge/license-GNU%20LGPLv3-green)](https://www.gnu.org/licenses/lgpl-3.0.en.html)";
       break;
 
     case 'Mozilla Public License 2.0':
-      badge = "[![License: Mozilla Public License 2.0](https://img.shields.io/badge/license-MPL%202.0-green)](https://www.mozilla.org/en-US/MPL/2.0/)"
+      badge = "[![License: Mozilla Public License 2.0](https://img.shields.io/badge/license-MPL%202.0-green)](https://www.mozilla.org/en-US/MPL/2.0/)";
       break;
 
     case 'Apache License 2.0':
-      badge = "[![License: Apache License 2.0](https://img.shields.io/badge/license-Apache%202.0-green)](https://www.apache.org/licenses/LICENSE-2.0)"
+      badge = "[![License: Apache License 2.0](https://img.shields.io/badge/license-Apache%202.0-green)](https://www.apache.org/licenses/LICENSE-2.0)";
       break;
 
     case 'MIT License':
-      badge = "[![License: MIT License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)"
+      badge = "[![License: MIT License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)";
       break;
 
     case 'Boost Software License 1.0':
-      badge = "[![License: Boost Software License 1.0](https://img.shields.io/badge/license-BSL%201.0-green)](https://www.boost.org/LICENSE_1_0.txt)"
+      badge = "[![License: Boost Software License 1.0](https://img.shields.io/badge/license-BSL%201.0-green)](https://www.boost.org/LICENSE_1_0.txt)";
       break;
 
     case 'The Unlicense':
-      badge = "[![License: The Unlicense](https://img.shields.io/badge/license-The%20Unlicense-green)](https://unlicense.org/)"
+      badge = "[![License: The Unlicense](https://img.shields.io/badge/license-The%20Unlicense-green)](https://unlicense.org/)";
       break;
   }
   return badge;
@@ -41,7 +41,41 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
+  let link = '';
+  switch (license) {
+    case 'GNU AGPLv3':
+      link = "[GNU AGPLv3](https://www.gnu.org/licenses/agpl-3.0.en.html)";
+      break;
 
+    case 'GNU GPLv3':
+      link = "[GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html)";
+      break;
+
+    case 'GNU LGPLv3':
+      link = "[GNU LGPLv3](https://www.gnu.org/licenses/lgpl-3.0.en.html)";
+      break;
+
+    case 'Mozilla Public License 2.0':
+      link = "[Mozilla Public License 2.0](https://www.mozilla.org/en-US/MPL/2.0/)";
+      break;
+
+    case 'Apache License 2.0':
+      link = "[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0)";
+      break;
+
+    case 'MIT License':
+      link = "[MIT License](https://opensource.org/licenses/MIT)";
+      break;
+
+    case 'Boost Software License 1.0':
+      link = "[Boost Software License 1.0](https://www.boost.org/LICENSE_1_0.txt)";
+      break;
+
+    case 'The Unlicense':
+      link = "[The Unlicense](https://unlicense.org/)";
+      break;
+  }
+  return link
 }
 
 // TODO: Create a function that returns the license section of README
