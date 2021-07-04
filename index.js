@@ -116,7 +116,7 @@ const questions = [
     {
         type: 'input',
         name: 'screenshot',
-        message: 'First, place the screenshot into dist/images. Now enter the full file name.',
+        message: 'First, place the screenshot into /images. Now enter the full file name and type.',
         when: ({ confirmScreen }) => confirmScreen
     },
     {
@@ -195,7 +195,7 @@ function init() {
             console.log(data);
             return generateMarkdown(data);
         })
-        .then(readme => writeToFile('readme.md', readme))
+        .then(readme => writeToFile('README.md', readme))
         .catch(err => {
             console.log(err);
           });
@@ -204,22 +204,3 @@ function init() {
 
 // Function call to initialize app
 init();
-
-// const mock = {
-//     username: 'ColeSammons',
-//     email: 'colemsammons@gmail.com',
-//     reponame: 'README-generator',
-//     titlename: 'README-generator',
-//     projectDesc: 'Creates a detailed readme for projects.',
-//     confirmDeploy: true,
-//     deployLink: 'google.com',
-//     installSteps: 'npm install inquirer',
-//     usage: 'Answer a series of questions and a readme will be populated from the results',
-//     confirmScreen: true,
-//     screenshot: 'screenshot.png',
-//     credits: 'me',
-//     license: 'MIT License',
-//     contributer: 'n/a',
-//     test: 'no current tests',
-//     contact: 'no contact'
-// }

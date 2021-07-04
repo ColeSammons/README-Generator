@@ -95,7 +95,7 @@ function confirmScreenshot(data) {
     return '';
   }
   return `
-  ![Screenshot](dist/images/${data.screenshot})
+  ![Screenshot](../images/${data.screenshot})
   `;
 }
 
