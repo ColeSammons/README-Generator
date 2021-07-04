@@ -36,7 +36,7 @@
   Cole Sammons
 
   
-  ##License
+  ## License
   [MIT License](https://opensource.org/licenses/MIT)
 
   Copyright &copy; 2021
