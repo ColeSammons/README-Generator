@@ -10,13 +10,13 @@
 
   ## Table of Contents
 
-  * [Installation](#Installation)
-  * [Usage](#Usage)
-  * [Credits](#Credits)
-  * [License](#License)
-  * [Contributing](#Contributing)
-  * [Tests](#Tests)
-  * [Questions](#Questions)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Credits](#credits)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
    
   ## Installation
   
@@ -26,7 +26,8 @@
 
   Creates a readme after running 'node index.js'.
   
-  ![Screenshot](../images/screenshot.png)
+  ![Screenshot](./images/screenshot.png)
+  [Video of user flow](https://drive.google.com/file/d/1IZunA6aWXMlCCVaTkWgdfrmaEMZepdgH/view)
   
 
   ## Credits
@@ -34,7 +35,7 @@
   Cole Sammons
 
   
-  ##License
+  ## License
   [MIT License](https://opensource.org/licenses/MIT)
 
   Copyright &copy; 2021

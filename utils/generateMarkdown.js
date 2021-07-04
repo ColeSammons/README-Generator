@@ -83,7 +83,7 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license) {
   const year = new Date();
   return `
-  ##License
+  ## License
   ${renderLicenseLink(license)}
 
   Copyright &copy; ${year.getFullYear()}
@@ -122,13 +122,13 @@ function generateMarkdown(data) {
 
   ## Table of Contents
 
-  * [Installation](#Installation)
-  * [Usage](#Usage)
-  * [Credits](#Credits)
-  * [License](#License)
-  * [Contributing](#Contributing)
-  * [Tests](#Tests)
-  * [Questions](#Questions)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Credits](#credits)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
    
   ## Installation
   
