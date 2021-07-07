@@ -1,4 +1,4 @@
-# readme generator
+# Readme generator
 
   [![License: MIT License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)
 
@@ -22,21 +22,21 @@
    
   ## Installation
   
-  install project
+  install steps
   
   ## Usage
 
-  how used
+  to generate readme
   
   ![Screenshot](../images/Screenshot.png)
   
 
   ## Credits
 
-  Cole Sammons
+  cole sammons
 
   
-  ##License
+  ## License
   [MIT License](https://opensource.org/licenses/MIT)
 
   Copyright &copy; 2021
@@ -44,16 +44,16 @@
 
   ## Contributing
 
-  No contribution
+  no contributions
 
   ## Tests
 
-  no current tests
+  no tests
 
   ## Questions
 
-  email
+  no contact
 
   cole@gmail.com
 
-  [https://github.com/ColeSammons/readme-generator](https://github.com/ColeSammons/readme-generator)
+  [https://github.com/colesammons/readme-gen](https://github.com/colesammons/readme-gen)
