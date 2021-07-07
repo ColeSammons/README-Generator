@@ -27,7 +27,7 @@
   Creates a readme after running 'node index.js'.
   
   ![Screenshot](/images/Screenshot.png)
-  [Video of user flow](https://drive.google.com/file/d/1IZunA6aWXMlCCVaTkWgdfrmaEMZepdgH/view)
+  [Video of user flow](https://drive.google.com/file/d/1zMZxuMSRYJKq-bPgyj4zTLKpWnhOGTJy/view)
   
 
   ## Credits
